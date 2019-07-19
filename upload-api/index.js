@@ -8,7 +8,7 @@ app.use(cors({
     origin:'http://localhost:8080'
 }))
 
-const fileFilter = function (req,file,cb){
+const fileFilter = function (req,file,cb,next){
     const allowedTypes = ["image/jpeg", "image/png", "image/gif"];
     if(!allowedTypes.includes(file.mimetype)){
         const error = new Error("Wrong File Type");
@@ -27,8 +27,24 @@ const upload = multer ({
     }
 })
 
+const pureUpload = multer({
+    dest: './uploads/'
+});
+
 app.post('/upload', upload.single("file"), (req,res)=>{
     res.json({ file : req.file}); 
+})
+
+app.post('/multiple', upload.array("files"), (req,res)=>{
+    res.json({ files : req.files}); 
+})
+
+app.post('/dropzone', pureUpload.single("file"), (req,res)=>{
+    res.json({ file : req.file}); 
+})
+
+app.get('/', (req,res)=>{
+    res.status(200).json({success: 'Yeah successfull created'})
 })
 
 app.use(function (err, req, res) {
