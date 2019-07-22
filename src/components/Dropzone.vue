@@ -100,7 +100,8 @@ export default {
             } catch(err){
                 // console.log(err);
                 this.uploading = false;
-                this.message = err.response.data.error;
+                // this.message = err.response.data.error;
+                this.message = "File not uploaded";
                 this.error = true;
             }
 
