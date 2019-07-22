@@ -89,9 +89,7 @@ export default {
             formData.append('file', file)
             try{
                 this.uploading = true;
-                const res =  await  axios.post( this.baseUrl+ 'dropzone', formData, {
-                    onUploadProgress: e => this.progress = Math.round(e.loaded * 100 / e.total )
-                }).then(
+                const res =  await  axios.post( this.baseUrl+ 'dropzone', formData ).then(
                     (data) => {
                         console.log(data);
                     },
@@ -167,4 +165,3 @@ export default {
     margin-top: 4px;
 }
 </style>
-
