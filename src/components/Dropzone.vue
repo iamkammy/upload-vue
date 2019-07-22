@@ -54,7 +54,7 @@ export default {
             file: '',
             message: "",
             error:false,
-            baseUrl: 'http://localhost:3344/',
+            baseUrl: 'http://128.199.59.139/vue-api/',
             uploading: false,
             uploadedFiles:[],
             progress: 0

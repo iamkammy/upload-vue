@@ -5,8 +5,10 @@ const app = express();
 const port = 3344;
 
 app.use(cors({
-    origin:'http://localhost:8080'
+    origin:'https://vueuploader.herokuapp.com/'
 }))
+
+
 
 const fileFilter = function (req,file,cb,next){
     const allowedTypes = ["image/jpeg", "image/png", "image/gif"];
