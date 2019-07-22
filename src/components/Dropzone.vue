@@ -15,7 +15,7 @@
                 type="file"
                 class="input-file"
                 ref="file"
-                @change="sendFile"
+                @change="selectFile"
             />
             <p v-if="!uploading" class="call-to-action">
               Browse or Drag Your Files here
@@ -35,7 +35,8 @@
         <div class="content">
             <ul v-if="uploadedFiles.length" class="list is-hoverable">
                 <li class="list-item"   v-for="file in uploadedFiles" :key="file.originalname">
-                    {{file.originalname}}
+                    {{file.originalname}} 
+                   <i class="fas pull-right fa-check"></i>
                      </li>
 
             </ul>
@@ -46,7 +47,6 @@
 
 <script>
 import axios from 'axios';
-import Snackbar from 'vuejs-snackbar';
 export default {
     name: "Dropzone",
     data(){
@@ -63,7 +63,7 @@ export default {
     methods:{
         selectFile(){
             const allowedTypes = ["image/jpeg", "image/png", "image/gif"];
-            const MAX_SIZE = 2000000;
+            const MAX_SIZE = 20000000;
               const file = this.$refs.file.files[0];
             const tooLarge = file.size > MAX_SIZE;
 
@@ -72,6 +72,8 @@ export default {
                 this.file = file;
                 this.error = false;
                 this.message = "";
+                this.sendFile();
+            
             } else{
                 this.error = true;
                 this.message = tooLarge ? `Too Large Max Size is ${MAX_SIZE/1000}Kb` : "Only images are allowed";
@@ -150,6 +152,12 @@ export default {
     position: absolute;
     cursor: pointer;
 
+}
+.pull-right{
+    float: right !important;
+    color: green;
+    margin-right: 20px;
+    margin-top: 4px;
 }
 </style>
 

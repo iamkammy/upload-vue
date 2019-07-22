@@ -18,19 +18,16 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import SimpleUpload from './components/SimpleUpload.vue'
 import MultipleUploads from './components/MultipleUploads.vue'
 import Dropzone from './components/Dropzone.vue';
 
-
 export default {
   name: 'app',
   components: {
-    HelloWorld,
     SimpleUpload,
     MultipleUploads,
-    Dropzone
+    Dropzone,
   }
 }
 </script>
