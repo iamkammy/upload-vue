@@ -15,7 +15,7 @@
                 type="file"
                 class="input-file"
                 ref="file"
-                @change="selectFile"
+                @change="sendFile"
             />
             <p v-if="!uploading" class="call-to-action">
               Browse or Drag Your Files here
@@ -72,7 +72,7 @@ export default {
                 this.file = file;
                 this.error = false;
                 this.message = "";
-                this.sendFile();
+                // this.sendFile();
             
             } else{
                 this.error = true;
