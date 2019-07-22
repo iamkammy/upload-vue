@@ -91,7 +91,14 @@ export default {
                 this.uploading = true;
                 const res =  await  axios.post( this.baseUrl+ 'dropzone', formData, {
                     onUploadProgress: e => this.progress = Math.round(e.loaded * 100 / e.total )
-                });
+                }).then(
+                    (data) => {
+                        console.log(data);
+                    },
+                    (err) => {
+                        console.log(err);
+                    }
+                )
                 this.uploadedFiles.push(res.data.file);
                 this.uploading = false; 
                  this.message = "File has been uploaded";
@@ -107,7 +114,6 @@ export default {
 
           
         }
-
 
     }
 }
