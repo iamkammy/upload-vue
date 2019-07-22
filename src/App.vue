@@ -18,15 +18,15 @@
 </template>
 
 <script>
-import SimpleUpload from './components/SimpleUpload.vue'
-import MultipleUploads from './components/MultipleUploads.vue'
+// import SimpleUpload from './components/SimpleUpload.vue'
+// import MultipleUploads from './components/MultipleUploads.vue'
 import Dropzone from './components/Dropzone.vue';
 
 export default {
   name: 'app',
   components: {
-    SimpleUpload,
-    MultipleUploads,
+    // SimpleUpload,
+    // MultipleUploads,
     Dropzone,
   }
 }
