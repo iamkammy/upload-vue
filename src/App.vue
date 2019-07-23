@@ -2,21 +2,25 @@
 
   <div class="section">
     <!-- <img id="logo" src="./assets/logo.png" alt="not loaded"> -->
-    <div class="container">
-          
- 
-      <div class="columns">
-        <div class="column">
-           <simple-upload />
-        </div>
-        <div class="column">
-          <multiple-uploads />
-        </div>
-      </div>
+    <!-- <navbar  /> -->
 
-      <dropzone  id="drop"  />
-       
-    </div>
+
+        <div class="container">
+              
+    
+          <div class="columns">
+            <div class="column">
+              <simple-upload />
+            </div>
+            <div class="column">
+              <multiple-uploads />
+            </div>
+          </div>
+          
+
+          <dropzone  id="drop"  />
+          
+        </div>
   </div>
 
   
@@ -26,6 +30,7 @@
 import SimpleUpload from './components/SimpleUpload.vue'
 import MultipleUploads from './components/MultipleUploads.vue'
 import Dropzone from './components/Dropzone.vue';
+import navbar from './components/navbar.vue';
 
 export default {
   name: 'app',
@@ -33,6 +38,7 @@ export default {
     SimpleUpload,
     MultipleUploads,
     Dropzone,
+    navbar
   }
 }
 </script>

@@ -44,6 +44,7 @@
 
 <script>
 import axios from 'axios';
+import { setTimeout } from 'timers';
 export default {
     name: "SimpleUpload",
     data(){
@@ -80,6 +81,9 @@ export default {
             try{
                  await  axios.post( this.baseUrl+ 'upload', formData);
                  this.message = "File has been uploaded";
+                 setTimeout(()=>{
+                     this.message = "";
+                 },3000)
                  this.file = "";
                  this.error = false;
             } catch(err){
