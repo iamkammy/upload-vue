@@ -1,11 +1,11 @@
 <template>
 
-  <div class="section">
+  <div class="mb-4">
     <!-- <img id="logo" src="./assets/logo.png" alt="not loaded"> -->
-    <!-- <navbar  /> -->
+    <Navbar  />
+<router-view />
 
-
-        <div class="container">
+        <!-- <div class="container">
               
     
           <div class="columns">
@@ -20,7 +20,7 @@
 
           <dropzone  id="drop"  />
           
-        </div>
+        </div> -->
   </div>
 
   
@@ -30,7 +30,7 @@
 import SimpleUpload from './components/SimpleUpload.vue'
 import MultipleUploads from './components/MultipleUploads.vue'
 import Dropzone from './components/Dropzone.vue';
-import navbar from './components/navbar.vue';
+import Navbar from './components/Navbar.vue';
 
 export default {
   name: 'app',
@@ -38,7 +38,7 @@ export default {
     SimpleUpload,
     MultipleUploads,
     Dropzone,
-    navbar
+    Navbar
   }
 }
 </script>

@@ -10,7 +10,7 @@
    </div>
 
 
-        <div class="dropzone">
+        <div class="dropzone mt-4">
             <input
                 type="file"
                 class="input-file"

@@ -10,7 +10,7 @@
    </div>
 
 
-        <div class="field">
+        <div class="field mt-4 ml-2">
             <div class="file is-boxed is-warning">
                 <label class="file-label">
                     <input 
@@ -35,8 +35,9 @@
             </div>
         </div>
 
-        <div class="field">
+        <div class="field w-25">
             <div v-for="(file,index) in files" :key="index"
+            
              :class="`level ${file.invalidMessage && 'has-text-danger'}`"
              
              >
@@ -54,7 +55,7 @@
             </div>
         </div>
 
-        <div class="field">
+        <div class="field ml-2">
             <button  :disabled="!selected" class="button is-info">Send</button>
         </div>
    </form>
@@ -132,3 +133,12 @@ export default {
     }
 }
 </script>
+
+<style>
+.level{
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 5px !important;
+}
+</style>

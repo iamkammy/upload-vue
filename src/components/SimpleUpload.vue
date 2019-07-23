@@ -10,7 +10,7 @@
    </div>
 
 
-        <div class="field">
+        <div class="field mt-4 ml-2">
             <div class="file is-boxed is-primary">
                 <label class="file-label">
                     <input 
@@ -36,7 +36,7 @@
             </div>
         </div>
 
-        <div class="field">
+        <div class="field ml-2">
             <button :disabled="!file" class="button is-info">Send</button>
         </div>
    </form>
@@ -58,7 +58,7 @@ export default {
     },
     methods:{
         selectFile(){
-            const allowedTypes = ["image/jpeg", "image/png", "image/gif"];
+            const allowedTypes = ["image/jpeg","image/webp","pdf", "image/png", "image/gif"];
             const MAX_SIZE = 2000000;
               var file = this.$refs.file.files[0];
             const tooLarge = file.size > MAX_SIZE;
@@ -84,7 +84,7 @@ export default {
                  setTimeout(()=>{
                      this.message = "";
                  },3000)
-                 this.file = "";
+                //  this.file = "";
                  this.error = false;
             } catch(err){
                 // console.log(err);
@@ -99,3 +99,6 @@ export default {
     }
 }
 </script>
+<style >
+
+</style>
