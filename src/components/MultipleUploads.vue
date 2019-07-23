@@ -26,7 +26,7 @@
                         </span>
 
                         <span class="file-label">
-                            Choose a file...
+                            Choose Multiple files...
                         </span>
                     </span>
 
@@ -55,7 +55,7 @@
         </div>
 
         <div class="field">
-            <button class="button is-info">Send</button>
+            <button  :disabled="!selected" class="button is-info">Send</button>
         </div>
    </form>
 </template>
@@ -68,6 +68,7 @@ export default {
     data(){
         return {
             files: [],
+            selected : false,
             uploadFiles:[],
             message: "",
             error:false,
@@ -76,6 +77,7 @@ export default {
     },
     methods:{
         selectFile(){
+            this.selected = true;
             const files = this.$refs.files.files;
             this.uploadFiles = [...this.files, ...files];
             this.files = [
@@ -115,6 +117,7 @@ export default {
                    await axios.post(this.baseUrl+ 'multiple', formData);
                    this.message = "Files has been uploaded";
                    this.files = [];
+                   this.selected = false;
                    this.uploadFiles = []; 
             } catch (err) {
                 this.message = err.response.data.error;

@@ -17,6 +17,7 @@
                     type="file"
                     ref="file"
                     @change="selectFile"
+                  
                     class="file-input"
                      />
                     <span class="file-cta">
@@ -25,7 +26,7 @@
                         </span>
 
                         <span class="file-label">
-                            Choose a file...
+                            Choose Single file...
                         </span>
                     </span>
 
@@ -36,7 +37,7 @@
         </div>
 
         <div class="field">
-            <button class="button is-info">Send</button>
+            <button :disabled="!file" class="button is-info">Send</button>
         </div>
    </form>
 </template>
@@ -49,6 +50,7 @@ export default {
         return {
             file: '',
             message: "",
+           
             error:false,
             baseUrl: 'https://fileupload-api.herokuapp.com/'
         }

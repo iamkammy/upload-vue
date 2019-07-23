@@ -18,7 +18,7 @@
                 @change="sendFile"
             />
             <p v-if="!uploading" class="call-to-action">
-              Browse or Drag Your Files here
+              Browse or Drag & Drop Your Files here ...
             </p>
 
             <p v-if="uploading" class="progress-bar">
