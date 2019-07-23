@@ -60,7 +60,7 @@ export default {
         selectFile(){
             const allowedTypes = ["image/jpeg", "image/png", "image/gif"];
             const MAX_SIZE = 2000000;
-              const file = this.$refs.file.files[0];
+              var file = this.$refs.file.files[0];
             const tooLarge = file.size > MAX_SIZE;
 
           
@@ -84,7 +84,7 @@ export default {
                  setTimeout(()=>{
                      this.message = "";
                  },3000)
-                 this.file = "";
+                //  this.file = "";
                  this.error = false;
             } catch(err){
                 // console.log(err);

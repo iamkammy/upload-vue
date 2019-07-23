@@ -95,6 +95,9 @@ export default {
                 this.uploadedFiles.push(res.data.file);
                 this.uploading = false; 
                  this.message = "File has been uploaded";
+                 setTimeout(()=>{
+                     this.message = "";
+                 },3000)
                  this.file = "";
                  this.error = false;
             } catch(err){
