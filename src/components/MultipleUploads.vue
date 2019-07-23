@@ -116,7 +116,8 @@ export default {
             });
 
             try {
-                   await axios.post(this.baseUrl+ 'multiple', formData);
+                   const resp = await axios.post(this.baseUrl+ 'multiple', formData);
+                   console.log(resp);
                    this.message = "Files has been uploaded";
                    this.files = [];
                    setTimeout(()=>{
