@@ -18,7 +18,7 @@
                 @change="sendFile"
             />
             <p v-if="!uploading" class="call-to-action">
-              Browse or Drag & Drop Your Files here ...
+              Browse or Drag & Drop Your File here ...
             </p>
 
             <p v-if="uploading" class="progress-bar">
@@ -72,7 +72,7 @@ export default {
                 this.file = file;
                 this.error = false;
                 this.message = "";
-                // this.sendFile();
+            
             
             } else{
                 this.error = true;
