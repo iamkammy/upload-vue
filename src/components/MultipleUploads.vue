@@ -95,8 +95,9 @@ export default {
 
         validate(file){
            
-            const MAX_SIZE = 2000000;
-            const allowedTypes = ["image/jpeg", "image/png", "image/gif"];
+            const MAX_SIZE = 200000;
+             const allowedTypes = ["image/jpeg","image/webp","pdf", "image/png", "image/gif"];
+
             if(file.size > MAX_SIZE){
                 return `Max size is ${MAX_SIZE/1000}Kb`;
             }
@@ -122,6 +123,7 @@ export default {
                      this.message = "";
                  },3000)
                    this.selected = false;
+                   this.error = false;
                    this.uploadFiles = []; 
             } catch (err) {
                 this.message = err.response.data.error;
