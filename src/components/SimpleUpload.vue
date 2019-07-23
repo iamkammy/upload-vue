@@ -50,7 +50,7 @@ export default {
             file: '',
             message: "",
             error:false,
-            baseUrl: 'http://localhost:3344/'
+            baseUrl: 'https://fileupload-api.herokuapp.com/'
         }
     },
     methods:{

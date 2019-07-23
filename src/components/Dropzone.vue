@@ -54,7 +54,7 @@ export default {
             file: '',
             message: "",
             error:false,
-            baseUrl: 'http://128.199.59.139/vue-api/',
+            baseUrl: 'https://fileupload-api.herokuapp.com/',
             uploading: false,
             uploadedFiles:[],
             progress: 0
