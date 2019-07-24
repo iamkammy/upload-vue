@@ -84,7 +84,7 @@ export default {
                  setTimeout(()=>{
                      this.message = "";
                  },3000)
-                //  this.file = "";
+                 this.file = "";
                  this.error = false;
             } catch(err){
                 // console.log(err);
