@@ -35,7 +35,7 @@
             </div>
         </div>
 
-        <div class="field w-25">
+        <div class="field w-50">
             <div v-for="(file,index) in files" :key="index"
             
              :class="`level ${file.invalidMessage && 'has-text-danger'}`"
